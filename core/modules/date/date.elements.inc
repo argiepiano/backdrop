@@ -1700,7 +1700,7 @@ function date_combo_validate($element, &$form_state) {
       $errors[] = t('The end date must be greater than the start date.');
     }
 
-    if (empty($errors)) {
+    if (empty($errors) && !empty($from_date)) {
       // Convert input dates back to their UTC values and re-format to ISO
       // or UNIX instead of the DATETIME format used in element processing.
       $item[$tz_field] = $timezone;
