@@ -615,13 +615,13 @@ class CommonSizeUnitTestCase extends BackdropUnitTestCase {
       $size = 23476892,
       $string . ' == ' . $parsed_size . ' bytes'
     );
-    $string = '76MRandomStringThatShouldBeIgnoredByParseSize.'; // 76 MB
+    $string = '76MRandomStringThatShouldBeIgnoredByParseSize.'; // 76 MB.
     $this->assertEqual(
       $parsed_size = parse_size($string),
       $size = 79691776,
       $string . ' == ' . $parsed_size . ' bytes'
     );
-    $string = '76.24 Giggabyte'; // Misspelled text -> 76.24 GB
+    $string = '76.24 Giggabyte'; // Misspelled text -> 76.24 GB.
     $this->assertEqual(
       $parsed_size = parse_size($string),
       $size = 81862076662,
