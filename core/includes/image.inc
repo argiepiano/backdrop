@@ -591,11 +591,11 @@ function image_add_svg_attributes($svg_content, array $attributes) {
         if (strlen($attributes['alt'])) {
           $title = $doc->createElement('title');
           $title->textContent = $attributes['alt'];
-          $doc->firstChild->prepend($title);
+          $doc->firstElementChild->prepend($title);
         }
         // Remove any given <title> element if alt is an empty string.
-        elseif ($doc->firstChild->firstChild && $doc->firstChild->firstChild->nodeName === 'title') {
-          $doc->firstChild->removeChild($doc->firstChild->firstChild);
+        elseif ($doc->firstElementChild->firstChild && $doc->firstElementChild->firstChild->nodeName === 'title') {
+          $doc->firstElementChild->removeChild($doc->firstChild->firstChild);
         }
       } catch (DOMException $e) {}
     unset($attributes['alt']);
@@ -604,10 +604,10 @@ function image_add_svg_attributes($svg_content, array $attributes) {
   foreach ($attributes as $attribute_name => $attribute_value) {
     $attribute_value = implode(' ', (array) $attribute_value);
     if (strlen($attribute_value)) {
-      $doc->firstChild->setAttribute($attribute_name, $attribute_value);
+      $doc->firstElementChild->setAttribute($attribute_name, $attribute_value);
     }
     else {
-      $doc->firstChild->removeAttribute($attribute_name);
+      $doc->firstElementChild->removeAttribute($attribute_name);
     }
   }
   return $doc->saveXML($doc->firstChild);
