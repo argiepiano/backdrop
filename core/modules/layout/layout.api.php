@@ -120,7 +120,7 @@ function hook_layout_context_info() {
  * Provides information on visibility conditions available to Layout module.
  *
  * Access plugins allow site builders to provide visibility conditions for
- * layouts and blocks. 
+ * layouts and blocks.
  *
  * Each type of visibility condition requires a class that controls access
  * to the layout of block. See the LayoutAccess base class for additional
@@ -129,17 +129,17 @@ function hook_layout_context_info() {
  * @return array
  *   Each item in the returned array of info should have the following keys:
  *   - title: The human-readable name of the context.
- *   - description: A description of what the access plugin does. 
+ *   - description: A description of what the access plugin does.
  *   - class: The name of a class to handle access. This class should
  *     extend the LayoutAccess class. The class should be registered in
  *     hook_autoload_info().
- *   - required contexts: (optional) An array of contexts required for this 
- *     visibility condition. These contexts are keyed by their internal name that
- *     this plugin will receive. The value of each item should be the type of
- *     context, as listed by hook_layout_context_info(). 
+ *   - required contexts: (optional) An array of contexts required for this
+ *     visibility condition. These contexts are keyed by their internal name
+ *     that this plugin will receive. The value of each item should be the type
+ *     of context, as listed by hook_layout_context_info().
  *   - required contexts labels: (optional) Provides human-readable labels for 
  *     the required contexts. This is helpful when a plugin needs two or more 
- *     contexts of the same type. 
+ *     contexts of the same type.
  *
  * @see hook_autoload_info()
  * @see layout_layout_access_info()
@@ -178,12 +178,12 @@ function hook_layout_access_info() {
  * @return array
  *   Each item in the returned array of info should have the following keys:
  *   - title: The human-readable name of the context.
- *   - description: A description of what the access plugin does. 
+ *   - description: A description of what the access plugin does.
  *   - class: The name of a class to handle access. This class should
  *     extend the LayoutAccess class. The class should be registered in
  *     hook_autoload_info().
  *   - context: The type of context from which this plugin is providing a
- *     relationship. These contexts are defined by hook_layout_context_info() 
+ *     relationship. These contexts are defined by hook_layout_context_info()
  *   - context_label: (optional) A human-readable label for the context.
  *
  * @see hook_autoload_info()
