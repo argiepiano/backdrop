@@ -137,8 +137,8 @@ function hook_layout_context_info() {
  *     visibility condition. These contexts are keyed by their internal name
  *     that this plugin will receive. The value of each item should be the type
  *     of context, as listed by hook_layout_context_info().
- *   - required contexts labels: (optional) Provides human-readable labels for 
- *     the required contexts. This is helpful when a plugin needs two or more 
+ *   - required contexts labels: (optional) Provides human-readable labels for
+ *     the required contexts. This is helpful when a plugin needs two or more
  *     contexts of the same type.
  *
  * @see hook_autoload_info()
