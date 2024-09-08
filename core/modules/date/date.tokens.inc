@@ -22,7 +22,7 @@ function date_token_info() {
     'description' => t('The date value.'),
     'type' => 'date',
   );
-  $info['tokens']['date-field-value']['to-date'] = array(
+  $info['tokens']['date-field-value']['end-date'] = array(
     'name' => t('End Date'),
     'description' => t('The End date value.'),
     'type' => 'date',
