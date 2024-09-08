@@ -44,7 +44,7 @@ function date_token_info_alter(&$info) {
       'date',
       'datetime',
       'datestamp',
-      ))) {
+    ))) {
       foreach (array_keys($field['bundles']) as $token_type) {
         // If a token already exists for this field, then don't add it.
         if (isset($info['tokens'][$token_type][$field_name])) {
@@ -122,7 +122,7 @@ function date_tokens($type, $tokens, array $data = array(), array $options = arr
         if (empty($chained_token)) {
           $chained_token = array('date:medium' => $original);
         }
-        $replacements += token_generate('date-field-value', $chained_token,array('date-field-value' => $field_items[$delta]), $options);
+        $replacements += token_generate('date-field-value', $chained_token, array('date-field-value' => $field_items[$delta]), $options);
 
       } else {
         // If no delta is specified, send the first item of the field.
