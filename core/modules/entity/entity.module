@@ -32,7 +32,7 @@ function entity_modules_uninstalled($modules) {
   foreach ($modules as $module) {
     $hook = $module . '_entity_info';
     if (function_exists($hook)) {
-      $entity_infos =  $hook();
+      $entity_infos = $hook();
       foreach ($entity_infos as $entity_type => $entity_info) {
         if (!empty($entity_info['fieldable'])) {
           // Get any leftover instance config files.
