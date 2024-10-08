@@ -41,7 +41,7 @@ function entity_modules_uninstalled($modules) {
             $config = config($instance_config_name);
             $config->delete();
 
-            // Remove any leftover data from field tablers.
+            // Remove any leftover data from field tables.
             list(,,, $bundle, $field_name) = explode('.', $instance_config_name);
             if (db_table_exists('field_data_' . $field_name)) {
               db_delete('field_data_' . $field_name)
