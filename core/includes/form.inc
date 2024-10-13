@@ -3795,6 +3795,15 @@ function theme_details($variables) {
  *         'status' => 'published',
  *         '#attributes' => array('class' => array('page-row')),
  *       ),
+ *       array(
+ *         'title' => 'Sample content',
+ *         'content_type' => 'Page',
+ *         'status' => 'published',
+ *         '#attributes' => array('class' => array('page-row')),
+ *         // Prevent users from selecting a row by adding a '#disabled'
+ *         // property set to TRUE.
+ *         '#disabled' => TRUE,
+ *       ),
  *     );
  *     $header = array(
  *       'title' => t('Title'),
@@ -3898,6 +3907,7 @@ function form_process_tableselect($element) {
             '#default_value' => isset($value[$key]) ? $key : NULL,
             '#attributes' => $element['#attributes'],
             '#ajax' => isset($element['#ajax']) ? $element['#ajax'] : NULL,
+            '#disabled' => !empty($element['#options'][$key]['#disabled']),
           );
         }
         else {
@@ -3913,6 +3923,7 @@ function form_process_tableselect($element) {
             '#parents' => $element['#parents'],
             '#id' => backdrop_html_id('edit-' . implode('-', $parents_for_id)),
             '#ajax' => isset($element['#ajax']) ? $element['#ajax'] : NULL,
+            '#disabled' => !empty($element['#options'][$key]['#disabled']),
           );
         }
         $element[$key]['#attributes']['data-tableselect-id'] = implode('-', $element['#parents']);
