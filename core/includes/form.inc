@@ -3783,19 +3783,19 @@ function theme_details($variables) {
  *     options:
  *     @code
  *     $options = array(
- *       array(
+ *       1 => array(
  *         'title' => 'How to Learn Backdrop',
  *         'content_type' => 'Post',
  *         'status' => 'published',
  *         '#attributes' => array('class' => array('post-row')),
  *       ),
- *       array(
+ *       5 => array(
  *         'title' => 'Privacy Policy',
  *         'content_type' => 'Page',
  *         'status' => 'published',
  *         '#attributes' => array('class' => array('page-row')),
  *       ),
- *       array(
+ *       23 => array(
  *         'title' => 'Sample content',
  *         'content_type' => 'Page',
  *         'status' => 'published',
@@ -3840,6 +3840,9 @@ function theme_tableselect($variables) {
       // correct order by iterating over the header fields.
       foreach ($element['#header'] as $fieldname => $title) {
         $row['data'][] = $element['#options'][$key][$fieldname];
+      }
+      if (!empty($element['#options'][$key]['#disabled'])) {
+        $row['class'][] = 'disabled';
       }
       $rows[] = $row;
     }
