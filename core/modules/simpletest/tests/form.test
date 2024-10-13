@@ -720,7 +720,7 @@ class FormElementTestCase extends BackdropWebTestCase {
   /**
    * Test disabled tableselect row.
    */
-  function testDisabledTabledragRow() {
+  public function testDisabledTabledragRow() {
     $this->backdropGet('form-test/disabled-tabledrag-row');
     $element = $this->xpath('//input[@name="tabledrag_test[5]"][@disabled]');
     $this->assertEqual(count($element), 1, 'One disabled tabledrag checkbox has been found');
